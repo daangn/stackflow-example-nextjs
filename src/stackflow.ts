@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import * as r from "next/router";
 import { startTransition } from "react";
 
-import { preloadDataMap } from "./lib/readPageProps";
+import { pagePropsMap } from "./lib/readPageProps";
 
 const activities = {
   Main: dynamic(() => import("./activities/Main"), { suspense: true }),
@@ -68,8 +68,8 @@ export const { Stack } = stackflow({
       routes,
       fallbackActivity: () => "Main",
       experimental_initialPreloadRef({ activityId, context }) {
-        if (!preloadDataMap[activityId]) {
-          preloadDataMap[activityId] = {
+        if (!pagePropsMap[activityId]) {
+          pagePropsMap[activityId] = {
             _t: "ok",
             pageProps: context.pageProps,
           };
@@ -79,19 +79,19 @@ export const { Stack } = stackflow({
         };
       },
       experimental_preloadRef({ path, route, activityId, activityParams }) {
-        if (!preloadDataMap[activityId]) {
+        if (!pagePropsMap[activityId]) {
           const promise = preloadNextPageData({
             path,
             route,
             activityParams,
           }).then((data) => {
-            preloadDataMap[activityId] = {
+            pagePropsMap[activityId] = {
               _t: "ok",
               pageProps: data.props.pageProps,
             };
           });
 
-          preloadDataMap[activityId] = {
+          pagePropsMap[activityId] = {
             _t: "pending",
             promise,
           };

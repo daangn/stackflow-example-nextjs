@@ -33,7 +33,9 @@ export default class MyApp extends App {
           <React.Suspense fallback="loading...">
             <Stack
               context={{
-                req: { path: this.props.router.asPath },
+                req: {
+                  path: this.props.router.asPath,
+                },
                 pageProps: this.props.pageProps,
               }}
             />
