@@ -8,13 +8,13 @@ import IconSettings from "../assets/IconSettings";
 import BottomTab from "../components/BottomTab";
 import FeedCard from "../components/FeedCard";
 import Layout from "../components/Layout";
+import { readPageProps } from "../lib/readPageProps";
+import { MainPageProps } from "../pages";
 import * as css from "./Main.css";
 
 const Main: React.FC = () => {
   const activity = useActivity();
-  // const data = readPreloadData<Queries.MainTemplateQueryQuery>(
-  //   activity.preloadRef,
-  // );
+  const data = readPageProps<MainPageProps>(activity.preloadRef);
 
   const appBarLeft = () => (
     <div className={css.appBarLeft}>
@@ -42,14 +42,16 @@ const Main: React.FC = () => {
     >
       <div className={css.wrapper}>
         <div className={css.scrollable}>
-          <FeedCard
-            key="1234"
-            articleId="1234"
-            daysAgo={7}
-            price={29}
-            region="Seoul"
-            title="Hello, World!"
-          />
+          {data.articles.map((article) => (
+            <FeedCard
+              key={article.articleId}
+              articleId={article.articleId}
+              daysAgo={article.daysAgo}
+              price={article.price}
+              region={article.region}
+              title={article.title}
+            />
+          ))}
         </div>
         <div className={css.bottom}>
           <BottomTab />

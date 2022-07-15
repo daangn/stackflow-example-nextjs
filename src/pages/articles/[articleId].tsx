@@ -1,14 +1,20 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
-export const getStaticProps: GetStaticProps = async () => ({
+import { articles } from "../../data";
+
+export const getStaticProps: GetStaticProps<{
+  recommendedArticles: typeof articles;
+}> = async (ctx) => ({
   props: {
-    hello: "world",
+    recommendedArticles: articles,
   },
 });
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   fallback: "blocking",
-  paths: ["/articles/1234"],
+  paths: [...articles.map((article) => `/articles/${article.articleId}`)],
 });
 
 export default () => null;
+
+export type ArticlePageProps = InferGetStaticPropsType<typeof getStaticProps>;

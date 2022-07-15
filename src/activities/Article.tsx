@@ -2,23 +2,22 @@ import { useActivity } from "@stackflow/react";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+import ArticleCard from "../components/ArticleCard";
 import ArticleProfile from "../components/ArticleProfile";
 import Layout from "../components/Layout";
 import { readPageProps } from "../lib/readPageProps";
+import { ArticlePageProps } from "../pages/articles/[articleId]";
 import { f } from "../styles";
 import * as css from "./Article.css";
 
 export interface ArticleParams {
   articleId: string;
 }
-const Article: React.FC<ArticleParams> = () => {
+const Article: React.FC<ArticleParams> = (props) => {
   const activity = useActivity();
-  const pageProps = readPageProps({ activityId: activity.id });
+  const pageProps = readPageProps<ArticlePageProps>(activity.preloadRef);
 
-  console.log(pageProps);
-  // const data = readPreloadData<Queries.ArticleTemplateQueryQuery>(activity.preloadRef)
-
-  const imageUrl = `https://picsum.photos/800/800/?id=1234`;
+  const imageUrl = `https://picsum.photos/800/800/?id=${props.articleId}`;
 
   return (
     <Layout>
@@ -46,14 +45,14 @@ const Article: React.FC<ArticleParams> = () => {
         <div className={css.section}>
           <div className={css.sectionTitle}>Other Items by Emila </div>
           <div className={css.recommenderGrid}>
-            {/* {data.allMarkdownRemark.nodes.map((node) => (
+            {pageProps.recommendedArticles.map((article) => (
               <ArticleCard
-                key={String(node.frontmatter!.id!)}
-                articleId={String(node.frontmatter!.id!)}
-                price={node.frontmatter!.price!}
-                title={node.frontmatter!.title!}
+                key={article.articleId}
+                articleId={article.articleId}
+                price={article.price}
+                title={article.title}
               />
-            ))} */}
+            ))}
           </div>
         </div>
       </div>
