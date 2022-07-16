@@ -97,6 +97,6 @@ export const rootLineHeight = style({
 });
 
 export const imgObjectFitCover = style({
-  objectFit: 'cover',
-  objectPosition: '50% 50%',
-})
+  objectFit: "cover",
+  objectPosition: "50% 50%",
+});

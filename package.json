@@ -3,6 +3,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "format": "eslint --fix --ignore-path .gitignore && prettier -w .",
     "start": "next start"
   },
   "dependencies": {
