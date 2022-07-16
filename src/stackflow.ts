@@ -8,14 +8,24 @@ import { startTransition } from "react";
 
 import { pagePropsMap } from "./lib/readPageProps";
 
+const isServer = typeof window === "undefined";
+
 const activities = {
-  Main: dynamic(() => import("./activities/Main"), { suspense: true }),
-  Article: dynamic(() => import("./activities/Article"), { suspense: true }),
+  Main: dynamic(() => import("./activities/Main"), {
+    suspense: !isServer,
+  }),
+  Article: dynamic(() => import("./activities/Article"), {
+    suspense: !isServer,
+  }),
+  NotFound: dynamic(() => import("./activities/NotFound"), {
+    suspense: !isServer,
+  }),
 };
 
 const routes = {
   Main: "/",
   Article: "/articles/:articleId",
+  NotFound: "/404",
 };
 
 export async function preloadNextPageData({
@@ -66,7 +76,7 @@ export const { Stack } = stackflow({
     basicRendererPlugin(),
     historySyncPlugin({
       routes,
-      fallbackActivity: () => "Main",
+      fallbackActivity: () => "NotFound",
       experimental_initialPreloadRef({ activityId, context }) {
         if (!pagePropsMap[activityId]) {
           pagePropsMap[activityId] = {

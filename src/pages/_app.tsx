@@ -1,6 +1,7 @@
 import "@stackflow/basic-ui/index.css";
 import "@seed-design/stylesheet/global.css";
 import "../styles/index.css";
+import "../styles/f.css";
 
 import App from "next/app";
 import Script from "next/script";
@@ -30,7 +31,7 @@ export default class MyApp extends App {
           dangerouslySetInnerHTML={{ __html: STACKFLOW_BASIC_UI_THEME_SCRIPT }}
         />
         <AppScreenThemeProvider>
-          <React.Suspense fallback="loading...">
+          <React.Suspense>
             <Stack
               context={{
                 req: {
