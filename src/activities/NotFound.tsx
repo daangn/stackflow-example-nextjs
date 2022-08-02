@@ -1,5 +1,6 @@
+import { ActivityComponentType } from "@stackflow/react";
 import React from "react";
 
-const NotFound: React.FC = () => <div>Not Found</div>;
+const NotFound: ActivityComponentType = () => <div>Not Found</div>;
 
 export default NotFound;

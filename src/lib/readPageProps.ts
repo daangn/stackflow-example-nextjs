@@ -4,8 +4,8 @@ export const pagePropsMap: {
     | { _t: "ok"; pageProps: any };
 } = {};
 
-export function readPageProps<T>(preloadRef?: any): T {
-  const preloadData = pagePropsMap[preloadRef.activityId];
+export function readPageProps<T>(preloadRef: { key: string }): T {
+  const preloadData = pagePropsMap[preloadRef.key];
 
   switch (preloadData._t) {
     case "pending":

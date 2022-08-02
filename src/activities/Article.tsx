@@ -1,4 +1,8 @@
-import { useActivity } from "@stackflow/react";
+import {
+  ActivityComponentType,
+  useActivity,
+  useActivityPreloadRef,
+} from "@stackflow/react";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -13,11 +17,11 @@ import * as css from "./Article.css";
 export interface ArticleParams {
   articleId: string;
 }
-const Article: React.FC<ArticleParams> = (props) => {
-  const activity = useActivity();
-  const pageProps = readPageProps<ArticlePageProps>(activity.preloadRef);
+const Article: ActivityComponentType<ArticleParams> = (props) => {
+  const preloadRef = useActivityPreloadRef<{ key: string }>();
+  const pageProps = readPageProps<ArticlePageProps>(preloadRef);
 
-  const imageUrl = `https://picsum.photos/800/800/?id=${props.articleId}`;
+  const imageUrl = `https://picsum.photos/800/800/?id=${props.params.articleId}`;
 
   return (
     <Layout>

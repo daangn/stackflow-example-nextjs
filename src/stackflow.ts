@@ -1,10 +1,9 @@
-import { ActivityParams } from "@stackflow/core";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
+import { preloadPlugin } from "@stackflow/plugin-preload";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { stackflow } from "@stackflow/react";
 import dynamic from "next/dynamic";
 import * as r from "next/router";
-import { startTransition } from "react";
 
 import { pagePropsMap } from "./lib/readPageProps";
 
@@ -35,7 +34,7 @@ export async function preloadNextPageData({
 }: {
   path: string;
   route: string;
-  activityParams: ActivityParams;
+  activityParams: any;
 }) {
   const { router } = r as any;
 
@@ -77,41 +76,82 @@ export const { Stack } = stackflow({
     historySyncPlugin({
       routes,
       fallbackActivity: () => "NotFound",
-      experimental_initialPreloadRef({ activityId, context }) {
-        if (!pagePropsMap[activityId]) {
-          pagePropsMap[activityId] = {
-            _t: "ok",
-            pageProps: context.pageProps,
-          };
-        }
-        return {
-          activityId,
-        };
-      },
-      experimental_preloadRef({ path, route, activityId, activityParams }) {
-        if (!pagePropsMap[activityId]) {
-          const promise = preloadNextPageData({
-            path,
-            route,
-            activityParams,
-          }).then((data) => {
-            pagePropsMap[activityId] = {
+    }),
+    preloadPlugin({
+      loaders: {
+        Main({ activityParams, eventContext, initContext, isInitialActivity }) {
+          const key = `Main#${JSON.stringify(activityParams)}`;
+
+          if (isInitialActivity) {
+            pagePropsMap[key] = {
               _t: "ok",
-              pageProps: data.props.pageProps,
+              pageProps: initContext.pageProps,
             };
-          });
+          }
 
-          pagePropsMap[activityId] = {
-            _t: "pending",
-            promise,
+          if (!pagePropsMap[key]) {
+            const promise = preloadNextPageData({
+              activityParams,
+              route: routes.Article,
+              path: eventContext["plugin-history-sync"].path,
+            }).then((data) => {
+              pagePropsMap[key] = {
+                _t: "ok",
+                pageProps: data.props.pageProps,
+              };
+            });
+
+            pagePropsMap[key] = {
+              _t: "pending",
+              promise,
+            };
+          }
+
+          return {
+            key,
           };
-        }
+        },
+        Article({
+          activityParams,
+          eventContext,
+          initContext,
+          isInitialActivity,
+        }) {
+          const key = `Article#${JSON.stringify(activityParams)}`;
 
-        return {
-          activityId,
-        };
+          if (isInitialActivity) {
+            pagePropsMap[key] = {
+              _t: "ok",
+              pageProps: initContext.pageProps,
+            };
+          }
+
+          if (!pagePropsMap[key]) {
+            const promise = preloadNextPageData({
+              activityParams,
+              route: routes.Article,
+              path: eventContext["plugin-history-sync"].path,
+            }).then((data) => {
+              pagePropsMap[key] = {
+                _t: "ok",
+                pageProps: data.props.pageProps,
+              };
+            });
+
+            pagePropsMap[key] = {
+              _t: "pending",
+              promise,
+            };
+          }
+
+          return {
+            key,
+          };
+        },
+        NotFound() {
+          return null;
+        },
       },
-      experimental_startTransition: startTransition,
     }),
   ],
 });

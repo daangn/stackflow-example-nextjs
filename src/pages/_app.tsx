@@ -33,7 +33,7 @@ export default class MyApp extends App {
         <AppScreenThemeProvider>
           <React.Suspense>
             <Stack
-              context={{
+              initContext={{
                 req: {
                   path: this.props.router.asPath,
                 },
