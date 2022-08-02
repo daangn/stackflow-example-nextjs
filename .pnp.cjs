@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@stackflow/basic-ui", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@stackflow/core", "npm:0.4.2-alpha.15"],\
             ["@stackflow/plugin-history-sync", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.7.1-alpha.1"],\
-            ["@stackflow/plugin-preload", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.232"],\
+            ["@stackflow/plugin-preload", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.233"],\
             ["@stackflow/plugin-renderer-basic", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@stackflow/react", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@types/node", "npm:18.0.3"],\
@@ -709,17 +709,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@stackflow/plugin-preload", [\
-        ["npm:0.1.1-alpha.232", {\
-          "packageLocation": "./.yarn/cache/@stackflow-plugin-preload-npm-0.1.1-alpha.232-5df8e1f320-02ba7375c6.zip/node_modules/@stackflow/plugin-preload/",\
+        ["npm:0.1.1-alpha.233", {\
+          "packageLocation": "./.yarn/cache/@stackflow-plugin-preload-npm-0.1.1-alpha.233-dec1071959-303ed5fb6c.zip/node_modules/@stackflow/plugin-preload/",\
           "packageDependencies": [\
-            ["@stackflow/plugin-preload", "npm:0.1.1-alpha.232"]\
+            ["@stackflow/plugin-preload", "npm:0.1.1-alpha.233"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.232", {\
-          "packageLocation": "./.yarn/__virtual__/@stackflow-plugin-preload-virtual-7eeeb0c7d1/0/cache/@stackflow-plugin-preload-npm-0.1.1-alpha.232-5df8e1f320-02ba7375c6.zip/node_modules/@stackflow/plugin-preload/",\
+        ["virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.233", {\
+          "packageLocation": "./.yarn/__virtual__/@stackflow-plugin-preload-virtual-b80c379892/0/cache/@stackflow-plugin-preload-npm-0.1.1-alpha.233-dec1071959-303ed5fb6c.zip/node_modules/@stackflow/plugin-preload/",\
           "packageDependencies": [\
-            ["@stackflow/plugin-preload", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.232"],\
+            ["@stackflow/plugin-preload", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.233"],\
             ["@stackflow/core", "npm:0.4.2-alpha.15"],\
             ["@stackflow/react", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@types/stackflow__core", null],\
@@ -4343,7 +4343,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@stackflow/basic-ui", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@stackflow/core", "npm:0.4.2-alpha.15"],\
             ["@stackflow/plugin-history-sync", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.7.1-alpha.1"],\
-            ["@stackflow/plugin-preload", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.232"],\
+            ["@stackflow/plugin-preload", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.1.1-alpha.233"],\
             ["@stackflow/plugin-renderer-basic", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@stackflow/react", "virtual:a13d81cd2b87d07b85a42a845f2e9a9eb37621c26dc8a8db070215a2d1dadadcc4419aa17b3146bce9a97a55b7d4f2318a23c399fcca86d34e87035fc1a0595f#npm:0.6.1-alpha.1"],\
             ["@types/node", "npm:18.0.3"],\

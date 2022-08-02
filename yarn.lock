@@ -522,12 +522,12 @@ __metadata:
   linkType: hard
 
 "@stackflow/plugin-preload@npm:canary":
-  version: 0.1.1-alpha.232
-  resolution: "@stackflow/plugin-preload@npm:0.1.1-alpha.232"
+  version: 0.1.1-alpha.233
+  resolution: "@stackflow/plugin-preload@npm:0.1.1-alpha.233"
   peerDependencies:
     "@stackflow/core": 0
     "@stackflow/react": 0
-  checksum: 02ba7375c6e0e911899c21520ede65bbf3c719fd0ec36332de4408766cf6980bf506c715a34b03a41d653670206d92a865b22a8c1fcebe9b6a2363aa9bde4925
+  checksum: 303ed5fb6c8b91e974e50bb5a3be186944b5188f4e158e1451b57a97625d7ad0b9afe60cf279926152ace5095e3bf0d16169294c86dd068142ebb8bf16acb944
   languageName: node
   linkType: hard
 
