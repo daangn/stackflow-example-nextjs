@@ -1,4 +1,8 @@
-import { useActivity } from "@stackflow/react";
+import {
+  ActivityComponentType,
+  useActivity,
+  useActivityPreloadRef,
+} from "@stackflow/react";
 import React from "react";
 
 import IconBell from "../assets/IconBell";
@@ -12,9 +16,9 @@ import { readPageProps } from "../lib/readPageProps";
 import { MainPageProps } from "../pages";
 import * as css from "./Main.css";
 
-const Main: React.FC = () => {
-  const activity = useActivity();
-  const data = readPageProps<MainPageProps>(activity.preloadRef);
+const Main: ActivityComponentType = () => {
+  const preloadRef = useActivityPreloadRef<{ key: string }>();
+  const pageProps = readPageProps<MainPageProps>(preloadRef);
 
   const appBarLeft = () => (
     <div className={css.appBarLeft}>
@@ -42,7 +46,7 @@ const Main: React.FC = () => {
     >
       <div className={css.wrapper}>
         <div className={css.scrollable}>
-          {data.articles.map((article) => (
+          {pageProps.articles.map((article) => (
             <FeedCard
               key={article.articleId}
               articleId={article.articleId}
