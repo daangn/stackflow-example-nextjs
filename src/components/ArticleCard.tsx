@@ -1,7 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { useFlow } from "../lib/useFlow";
+import { Link } from "../lib/Link";
 import { f } from "../styles";
 import * as css from "./ArticleCard.css";
 
@@ -15,23 +15,22 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   title,
   price,
 }) => {
-  const { push } = useFlow();
-
   const imageUrl = `https://picsum.photos/800/800/?id=${articleId}`;
 
-  const onClick = () => {
-    push("Article", {
-      articleId: String(articleId),
-    });
-  };
-
   return (
-    <button type="button" className={css.container} onClick={onClick}>
+    <Link
+      className={css.container}
+      activityName="Article"
+      activityParams={{
+        articleId: String(articleId),
+      }}
+    >
       <div className={css.thumbnail}>
         <div className={css.innerImage}>
           <LazyLoadImage
             className={f.imgObjectFitCover}
             src={imageUrl}
+            effect="opacity"
             width="100%"
             height="100%"
           />
@@ -39,7 +38,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       </div>
       <div className={css.title}>{title}</div>
       <div className={css.price}>£{price}.00</div>
-    </button>
+    </Link>
   );
 };
 

@@ -484,32 +484,48 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stackflow/basic-ui@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@stackflow/basic-ui@npm:0.8.0"
+"@stackflow/basic-ui@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@stackflow/basic-ui@npm:0.9.1"
   dependencies:
     "@vanilla-extract/dynamic": ^2.0.2
+    "@vanilla-extract/private": ^1.0.3
+    "@vanilla-extract/recipes": ^0.2.5
   peerDependencies:
     "@stackflow/core": 0
     "@stackflow/react": 0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: c10f750c275a66fd1034c5088d92c584847a985d49d6ea885caeba84b2b612eea02074bbd1281b9d647e9ea1a7fa953bd7c82cf57ce44c534ac73ea74de47ced
+  checksum: 3b6f324f4fa661b30fa82a239b9ff6fd719fb38db1693f662ae264d55be9b2f203dff454999ee898429e3261fd4a27fe829e0f924d2b1cf75e3e72747c99c155
   languageName: node
   linkType: hard
 
-"@stackflow/core@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@stackflow/core@npm:0.8.0"
+"@stackflow/core@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@stackflow/core@npm:0.9.1"
   dependencies:
     react-fast-compare: ^3.2.0
-  checksum: 5a944de97eb747b6b83aaebb5539b957c802ce4c19bdd723a62097c2a1f5cd0fb72a12c2d90a26c9faeeae8763a014f9d9c6eaf6f6ecebcb0f2bfdd15746201a
+  checksum: d4befd83644b29d012a96b9bf1092339aed6d94088f07a076997c8d54ca4a5f26a2a6853d6ced23e9783c83357216f73bffa18de2aacbd368bf520ded2e939c8
   languageName: node
   linkType: hard
 
-"@stackflow/plugin-history-sync@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@stackflow/plugin-history-sync@npm:0.8.0"
+"@stackflow/link@npm:^0.9.4":
+  version: 0.9.4
+  resolution: "@stackflow/link@npm:0.9.4"
+  peerDependencies:
+    "@stackflow/core": 0
+    "@stackflow/plugin-history-sync": 0
+    "@stackflow/plugin-preload": 0
+    "@stackflow/react": 0
+    "@types/react": ">=16.8.0"
+    react: ">=16.8.0"
+  checksum: 0ed751efc6e20a5150da58f126c21489df5410f445f55c6f820e0e640af88efc31758b91ec97e350c1a328446deb5c56dc4c851d51991c32fc14e6d4a2c6aecd
+  languageName: node
+  linkType: hard
+
+"@stackflow/plugin-history-sync@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@stackflow/plugin-history-sync@npm:0.9.1"
   dependencies:
     url-pattern: ^1.0.3
   peerDependencies:
@@ -517,42 +533,46 @@ __metadata:
     "@stackflow/react": 0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: 408fba3c1bacd7423dd3c06ccc50e49d48eb697d8d12d7585fe239215722f49b65a28e436bad3fa2004eda069b740f53882d7e69a7730bf763f915719984f155
+  checksum: ae30f422081ce8656e51b40b66e0ad6eaa4b42f71a93acfbeeeae94ea1821f4a7b6a1ff260ef2912961e2b4aafc0f829cd51e4c70a9f77e519e58a7588ae20f2
   languageName: node
   linkType: hard
 
-"@stackflow/plugin-preload@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@stackflow/plugin-preload@npm:0.8.0"
-  peerDependencies:
-    "@stackflow/core": 0
-    "@stackflow/react": 0
-  checksum: ad37525da7113010aef33d842f8886fd01d324c8f1715601583f16cd7aea6beefe54e50939cfac719d5004e5f9f9d782a7783ff6bc58ceb68aa8d9f7a8a3b3a9
-  languageName: node
-  linkType: hard
-
-"@stackflow/plugin-renderer-basic@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@stackflow/plugin-renderer-basic@npm:0.8.0"
+"@stackflow/plugin-preload@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@stackflow/plugin-preload@npm:0.9.1"
+  dependencies:
+    "@stackflow/plugin-history-sync": ^0.9.1
   peerDependencies:
     "@stackflow/core": 0
     "@stackflow/react": 0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: cd0f39e7f3db052ee552f04427512cf5b5719f7c9e10d423196ca00d65192061936e09d56faa5cf85c31587fd2ba24746645e6f8dee7c586438739af8343a8b5
+  checksum: 4de0206ae3091024e75f0bba33e0e8153b687a8bd49d65f09a74dc86a0350ae010a4e4435a33edcc385e789803a7efb9e2cb05d338b6f788d9495c32d44ac715
   languageName: node
   linkType: hard
 
-"@stackflow/react@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@stackflow/react@npm:0.8.0"
+"@stackflow/plugin-renderer-basic@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@stackflow/plugin-renderer-basic@npm:0.9.1"
+  peerDependencies:
+    "@stackflow/core": 0
+    "@stackflow/react": 0
+    "@types/react": ">=16.8.0"
+    react: ">=16.8.0"
+  checksum: 1288be6873d644328def283c183a879409007a795ee65f5280ca1e3f44e35e39a59a275e2ad41e5645032eb4c8771a3b29a771e2074ec470b5ed9c0ef6e8b62e
+  languageName: node
+  linkType: hard
+
+"@stackflow/react@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "@stackflow/react@npm:0.9.1"
   dependencies:
     react-fast-compare: ^3.2.0
   peerDependencies:
     "@stackflow/core": 0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: aae3bd02065cd87dc482310f82e760fe6dd1459a915e655444a39f748b30a87d8ca3d0021dff459c38fd08fd4a4eeeb94328ecad02e9ce5e02b3c7a92942abb5
+  checksum: dc92e13607e78b2c3f761b1cf0bbb0348e541c73ebdd12bc216ea25775a5a47050eb7be6aceea301c01af1fceb0d81efdf616ae6e75fe06ebcef1fa3a8a8c61d
   languageName: node
   linkType: hard
 
@@ -772,6 +792,15 @@ __metadata:
   version: 1.0.3
   resolution: "@vanilla-extract/private@npm:1.0.3"
   checksum: 866a71ba6804edeb0735684e7723ba78f5cf0bb40d4fb538fe6bf7d73928099e341312337b2a510ac0ce96ff8a4b39eb7f7a5fad0c842532353dd20e7278f29b
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/recipes@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "@vanilla-extract/recipes@npm:0.2.5"
+  peerDependencies:
+    "@vanilla-extract/css": ^1.0.0
+  checksum: 474ab445f4166bded294d5f77e02ba9b10ec6effe08364c03396e2802848d904a2a1dd9b20466405ebda93449c5a634c2fe99cd1d12888b0f84accf4d2d72666
   languageName: node
   linkType: hard
 
@@ -3529,12 +3558,13 @@ __metadata:
   dependencies:
     "@seed-design/design-token": ^1.0.0-alpha.0
     "@seed-design/stylesheet": ^1.0.0-beta.1
-    "@stackflow/basic-ui": ^0.8.0
-    "@stackflow/core": ^0.8.0
-    "@stackflow/plugin-history-sync": ^0.8.0
-    "@stackflow/plugin-preload": ^0.8.0
-    "@stackflow/plugin-renderer-basic": ^0.8.0
-    "@stackflow/react": ^0.8.0
+    "@stackflow/basic-ui": ^0.9.1
+    "@stackflow/core": ^0.9.1
+    "@stackflow/link": ^0.9.4
+    "@stackflow/plugin-history-sync": ^0.9.1
+    "@stackflow/plugin-preload": ^0.9.1
+    "@stackflow/plugin-renderer-basic": ^0.9.1
+    "@stackflow/react": ^0.9.1
     "@types/node": ^18.0.3
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6

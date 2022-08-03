@@ -12,7 +12,7 @@ export const container = style([
 
 export const button = style([
   f.cursorPointer,
-  f.resetButton,
+  f.resetAnchor,
   f.flex,
   {
     boxShadow: `0 1px 0 0 ${vars.$semantic.color.divider1}`,

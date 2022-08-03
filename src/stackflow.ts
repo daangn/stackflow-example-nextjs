@@ -52,7 +52,7 @@ export const { Stack } = stackflow({
             const promise = preloadNextPageProps({
               activityParams,
               route: routes.Article,
-              path: eventContext["plugin-history-sync"].path,
+              path: eventContext.path,
             }).then((pageProps) => {
               pagePropsMap[key] = {
                 _t: "ok",
@@ -89,7 +89,7 @@ export const { Stack } = stackflow({
             const promise = preloadNextPageProps({
               activityParams,
               route: routes.Article,
-              path: eventContext["plugin-history-sync"].path,
+              path: eventContext.path,
             }).then((pageProps) => {
               pagePropsMap[key] = {
                 _t: "ok",
