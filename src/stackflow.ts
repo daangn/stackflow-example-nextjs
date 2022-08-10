@@ -38,13 +38,18 @@ export const { Stack } = stackflow({
     }),
     preloadPlugin({
       loaders: {
-        Main({ activityParams, eventContext, initContext, isInitialActivity }) {
+        Main({
+          activityParams,
+          activityContext,
+          initContext,
+          isInitialActivity,
+        }) {
           const key = `Main#${JSON.stringify(activityParams)}`;
 
           if (isInitialActivity) {
             pagePropsMap[key] = {
               _t: "ok",
-              pageProps: initContext.pageProps,
+              pageProps: (initContext as any).pageProps,
             };
           }
 
@@ -52,7 +57,7 @@ export const { Stack } = stackflow({
             const promise = preloadNextPageProps({
               activityParams,
               route: routes.Article,
-              path: eventContext.path,
+              path: (activityContext as any).path,
             }).then((pageProps) => {
               pagePropsMap[key] = {
                 _t: "ok",
@@ -72,7 +77,7 @@ export const { Stack } = stackflow({
         },
         Article({
           activityParams,
-          eventContext,
+          activityContext,
           initContext,
           isInitialActivity,
         }) {
@@ -81,7 +86,7 @@ export const { Stack } = stackflow({
           if (isInitialActivity) {
             pagePropsMap[key] = {
               _t: "ok",
-              pageProps: initContext.pageProps,
+              pageProps: (initContext as any).pageProps,
             };
           }
 
@@ -89,7 +94,7 @@ export const { Stack } = stackflow({
             const promise = preloadNextPageProps({
               activityParams,
               route: routes.Article,
-              path: eventContext.path,
+              path: (activityContext as any).path,
             }).then((pageProps) => {
               pagePropsMap[key] = {
                 _t: "ok",

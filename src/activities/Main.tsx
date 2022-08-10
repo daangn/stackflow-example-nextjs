@@ -1,8 +1,5 @@
-import {
-  ActivityComponentType,
-  useActivity,
-  useActivityPreloadRef,
-} from "@stackflow/react";
+import { useActivityPreloadRef } from "@stackflow/plugin-preload";
+import { ActivityComponentType } from "@stackflow/react";
 import React from "react";
 
 import IconBell from "../assets/IconBell";
