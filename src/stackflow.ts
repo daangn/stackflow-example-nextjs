@@ -78,7 +78,7 @@ export const { Stack } = stackflow({
           if (!pagePropsMap[key]) {
             const promise = preloadNextPageProps({
               activityParams,
-              route: routes.Article,
+              route: routes.Main,
               path: (activityContext as any).path,
             }).then((pageProps) => {
               pagePropsMap[key] = {
