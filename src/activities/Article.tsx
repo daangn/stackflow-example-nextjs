@@ -1,3 +1,4 @@
+import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useActivityPreloadRef } from "@stackflow/plugin-preload";
 import { ActivityComponentType } from "@stackflow/react";
 import React from "react";
@@ -5,7 +6,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import ArticleCard from "../components/ArticleCard";
 import ArticleProfile from "../components/ArticleProfile";
-import Layout from "../components/Layout";
 import { readPageProps } from "../lib/readPageProps";
 import { ArticlePageProps } from "../pages/articles/[articleId]";
 import { f } from "../styles";
@@ -21,7 +21,7 @@ const Article: ActivityComponentType<ArticleParams> = (props) => {
   const imageUrl = `https://picsum.photos/800/800/?id=${props.params.articleId}`;
 
   return (
-    <Layout>
+    <AppScreen appBar={{}}>
       <div className={css.container}>
         <div className={css.image}>
           <div className={css.imageInner}>
@@ -57,7 +57,7 @@ const Article: ActivityComponentType<ArticleParams> = (props) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </AppScreen>
   );
 };
 

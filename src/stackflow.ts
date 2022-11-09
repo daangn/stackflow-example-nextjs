@@ -1,3 +1,5 @@
+import { vars } from "@seed-design/design-token";
+import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { preloadPlugin } from "@stackflow/plugin-preload";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
@@ -8,6 +10,16 @@ import { preloadNextPageProps } from "./lib/preloadNextPageProps";
 import { pagePropsMap } from "./lib/readPageProps";
 
 const isServer = typeof window === "undefined";
+
+const theme =
+  !isServer && /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())
+    ? "cupertino"
+    : "android";
+
+const borderColor =
+  theme === "cupertino"
+    ? vars.$semantic.color.divider3
+    : vars.$semantic.color.divider2;
 
 const activities = {
   Main: dynamic(() => import("./activities/Main"), {
@@ -20,6 +32,7 @@ const activities = {
     suspense: !isServer,
   }),
 };
+export type TypeActivities = typeof activities;
 
 const routes = {
   Main: "/",
@@ -32,6 +45,15 @@ export const { Stack } = stackflow({
   activities,
   plugins: [
     basicRendererPlugin(),
+    basicUIPlugin({
+      theme,
+      backgroundColor: vars.$semantic.color.paperDefault,
+      appBar: {
+        borderColor,
+        textColor: vars.$scale.color.gray900,
+        iconColor: vars.$scale.color.gray900,
+      },
+    }),
     historySyncPlugin({
       routes,
       fallbackActivity: () => "NotFound",
@@ -116,5 +138,3 @@ export const { Stack } = stackflow({
     }),
   ],
 });
-
-export type TypeActivities = typeof activities;

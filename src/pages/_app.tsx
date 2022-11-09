@@ -1,4 +1,4 @@
-import "@stackflow/basic-ui/index.css";
+import "@stackflow/plugin-basic-ui/index.css";
 import "@seed-design/stylesheet/global.css";
 import "../styles/index.css";
 import "../styles/f.css";
@@ -8,7 +8,6 @@ import Script from "next/script";
 import React from "react";
 import dedent from "ts-dedent";
 
-import { AppScreenThemeProvider } from "../AppScreenThemeContext";
 import { Stack } from "../stackflow";
 
 const SEED_SCALE_COLOR_SCRIPT = dedent`
@@ -30,18 +29,17 @@ export default class MyApp extends App {
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: STACKFLOW_BASIC_UI_THEME_SCRIPT }}
         />
-        <AppScreenThemeProvider>
-          <React.Suspense>
-            <Stack
-              initContext={{
-                req: {
-                  path: this.props.router.asPath,
-                },
-                pageProps: this.props.pageProps,
-              }}
-            />
-          </React.Suspense>
-        </AppScreenThemeProvider>
+
+        <React.Suspense>
+          <Stack
+            initContext={{
+              req: {
+                path: this.props.router.asPath,
+              },
+              pageProps: this.props.pageProps,
+            }}
+          />
+        </React.Suspense>
       </React.StrictMode>
     );
   }
