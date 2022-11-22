@@ -9,19 +9,20 @@
   "dependencies": {
     "@seed-design/design-token": "^1.0.0-alpha.0",
     "@seed-design/stylesheet": "^1.0.0-beta.1",
-    "@stackflow/core": "^0.15.1",
-    "@stackflow/link": "^0.15.1",
-    "@stackflow/plugin-basic-ui": "^0.15.2",
-    "@stackflow/plugin-history-sync": "^0.15.1",
-    "@stackflow/plugin-preload": "^0.15.1",
-    "@stackflow/plugin-renderer-basic": "^0.15.1",
-    "@stackflow/react": "^0.15.1",
+    "@stackflow/core": "canary",
+    "@stackflow/link": "canary",
+    "@stackflow/plugin-basic-ui": "canary",
+    "@stackflow/plugin-history-sync": "canary",
+    "@stackflow/plugin-preload": "canary",
+    "@stackflow/plugin-renderer-basic": "canary",
+    "@stackflow/react": "canary",
     "@vanilla-extract/next-plugin": "^2.0.2",
     "next": "^12.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lazy-load-image-component": "^1.5.4",
-    "ts-dedent": "^2.2.0"
+    "ts-dedent": "^2.2.0",
+    "use-sync-external-store": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",

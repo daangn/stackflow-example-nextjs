@@ -1,4 +1,4 @@
-import { createLink } from "@stackflow/link";
+import { createLinkComponent } from "@stackflow/link";
 import { TypeActivities } from "../stackflow";
 
-export const { Link } = createLink<TypeActivities>();
+export const { Link } = createLinkComponent<TypeActivities>();

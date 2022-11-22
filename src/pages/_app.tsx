@@ -14,7 +14,7 @@ const SEED_SCALE_COLOR_SCRIPT = dedent`
   (() => {var e=document.documentElement;e.dataset.seed="";var pd=window.matchMedia("(prefers-color-scheme: dark)"),a=()=>{e.dataset.seedScaleColor=pd.matches?"dark":"light"};"addEventListener"in pd?pd.addEventListener("change",a):"addListener"in pd&&pd.addListener(a),a();})()
 `;
 const STACKFLOW_BASIC_UI_THEME_SCRIPT = dedent`
-  (() => {var c=/iphone|ipad|ipod/i.test(window.navigator.userAgent.toLowerCase()),e=document.documentElement;e.dataset.stackflowBasicUiTheme=c?"cupertino":"android";})()
+  (() => {var c=/iphone|ipad|ipod/i.test(window.navigator.userAgent.toLowerCase()),e=document.documentElement;e.dataset.stackflowPluginBasicUiTheme=c?"cupertino":"android";})()
 `;
 
 export default class MyApp extends App {
@@ -32,7 +32,7 @@ export default class MyApp extends App {
 
         <React.Suspense>
           <Stack
-            initContext={{
+            initialContext={{
               req: {
                 path: this.props.router.asPath,
               },
