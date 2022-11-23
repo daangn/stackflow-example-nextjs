@@ -63,7 +63,7 @@ export const { Stack } = stackflow({
         Main({
           activityParams,
           activityContext,
-          initContext,
+          initialContext,
           isInitialActivity,
         }) {
           const key = `Main#${JSON.stringify(activityParams)}`;
@@ -71,7 +71,7 @@ export const { Stack } = stackflow({
           if (isInitialActivity) {
             pagePropsMap[key] = {
               _t: "ok",
-              pageProps: (initContext as any).pageProps,
+              pageProps: (initialContext as any).pageProps,
             };
           }
 
@@ -100,7 +100,7 @@ export const { Stack } = stackflow({
         Article({
           activityParams,
           activityContext,
-          initContext,
+          initialContext,
           isInitialActivity,
         }) {
           const key = `Article#${JSON.stringify(activityParams)}`;
@@ -108,7 +108,7 @@ export const { Stack } = stackflow({
           if (isInitialActivity) {
             pagePropsMap[key] = {
               _t: "ok",
-              pageProps: (initContext as any).pageProps,
+              pageProps: (initialContext as any).pageProps,
             };
           }
 
